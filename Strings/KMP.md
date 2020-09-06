@@ -3,7 +3,7 @@ KMP algorithm is used for solving pattern problem.
 void lps(string s,vector<int>lp) //function used to drive get the longest proper prefix
 {
     int len=0;
-    int i=0;
+    int i=1;
     lp[0]=0;//very important ,initial the starting of lps to 0.
     while(len<s.length())
     {
@@ -50,7 +50,7 @@ void KMP(string M,string P)
         }
         else if(i<m && M[i]!=P[j])
         {
-            if(j!=)
+            if(j!=0)
             {
                 j=lp[j-1];
             }
