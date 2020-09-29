@@ -67,3 +67,65 @@ public:
  * int param_1 = obj->next(price);
  */
 ```
+MY SOLUTION
+```
+class StockSpanner {
+public:
+    vector<int>v;
+    stack<pair<int,int>> st;
+    int i=0;
+
+    StockSpanner() {
+        
+    }
+    
+    int next(int price) {
+        int res=1;
+        v.push_back(price);
+        i=v.size()-1;
+        if(st.size()==0)
+        {
+            st.push(make_pair(v[i],i));
+           
+            return 1;
+        }
+            
+        
+            else if(st.size()>0 && st.top().first>v[i])
+            {
+                
+                res=abs(i-st.top().second); 
+                
+            }
+           
+            
+            else if(st.size()>0 && st.top().first<=v[i])
+                
+            {
+                while(st.size()>0 && st.top().first<=v[i])
+                    st.pop();
+             
+                if(st.size()==0)
+                {
+                 
+                    res=v.size();
+                    
+                }
+                   
+                else
+                    res=abs(i-st.top().second);
+            }
+       
+        st.push(make_pair(v[i],i));
+        
+        return res;
+        
+    }
+};
+
+/**
+ * Your StockSpanner object will be instantiated and called as such:
+ * StockSpanner* obj = new StockSpanner();
+ * int param_1 = obj->next(price);
+ */
+```
