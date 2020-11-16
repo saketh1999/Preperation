@@ -1,0 +1,3 @@
+Most useful graph vid
+........................
+https://www.youtube.com/watch?v=09_LlHjoEiY
